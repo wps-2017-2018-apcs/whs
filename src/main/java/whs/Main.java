@@ -14,7 +14,7 @@ import javax.swing.*;
 /**
  * Main class.
  */
-public class Main {
+public class Main {//hi
 
     /**
      * Whs main method.
