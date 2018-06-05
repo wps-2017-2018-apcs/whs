@@ -1,3 +1,5 @@
+package minesweeper;
+
 /*
  * Main.java
  *
@@ -5,7 +7,6 @@
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
  * @author David C. Petty <dpetty@winchesterps.org>
  */
-package whs;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -14,7 +15,7 @@ import javax.swing.*;
 /**
  * Main class.
  */
-public class Main {//hi
+public class Main {
 
     /**
      * Whs main method.

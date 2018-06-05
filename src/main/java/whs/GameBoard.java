@@ -1,5 +1,9 @@
-package whs;
+package minesweeper;
 
-public class GameBoard {
+import javax.swing.*;
+import java.awt.*;
 
+public class GameBoard extends JFrame {
+	private int row = 16, col = 16;
+	
 }

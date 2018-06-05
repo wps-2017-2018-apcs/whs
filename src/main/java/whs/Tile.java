@@ -5,7 +5,7 @@
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
  * @author David C. Petty <dpetty@winchesterps.org>
  */
-package whs;
+package minesweeper;
 
 public class Tile {
     public enum State {BOMB, FLAG, DEFAULT};
