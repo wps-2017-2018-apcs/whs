@@ -1,5 +1,3 @@
-package minesweeper;
-
 /*
  * Main.java
  *
@@ -7,6 +5,7 @@ package minesweeper;
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
  * @author David C. Petty <dpetty@winchesterps.org>
  */
+package minesweeper;
 
 import java.awt.*;
 import java.awt.event.*;
