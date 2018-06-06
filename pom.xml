@@ -1,18 +1,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>whs</groupId>
-  <artifactId>whs</artifactId>
+  <groupId>minesweeper</groupId>
+  <artifactId>minesweeper</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>whs</name>
+  <name>minesweeper</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <github.global.server>github</github.global.server>
     <additionalparam>-Xdoclint:none</additionalparam> <!-- for javadoc 8 -->
-    <my.java.mainClass>whs.Main</my.java.mainClass>
+    <my.java.mainClass>minesweeper.Main</my.java.mainClass>
   </properties>
 
   <build>
