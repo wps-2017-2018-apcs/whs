@@ -9,15 +9,8 @@ package minesweeper;
 
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.*;package minesweeper;
-
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.EtchedBorder;
-import java.text.*;
-import java.util.*;
+
 
 
 public class Main extends JFrame {
