@@ -110,18 +110,3 @@ public class Main extends JFrame {
   }
 }
 
-/**
- * Main class.
- */
-public class Main {
-
-    /**
-     * Whs main method.
-     *
-     * @param args command-line arguments
-     */
-    public static void main(String[] args) {
-        System.out.println("# Main");
-        //TODO: instantiate the game
-    }
-}
