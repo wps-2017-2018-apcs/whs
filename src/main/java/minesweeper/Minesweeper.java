@@ -1,13 +1,25 @@
 /*
  * Minesweeper.java
+ */
+package minesweeper;
+
+import org.apache.logging.log4j.*;
+
+/**
+ * DESCRIBE {@link Minesweeper} HERE.
  *
  * @author 2017-2018 APCS
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
  * @author David C. Petty <dpetty@winchesterps.org>
  */
-package minesweeper;
-
 public class Minesweeper {
+    /** LONG name of this project. */
+    public static final String LONG = "Minesweeper";
+    /** SHORT name of this project. */
+    public static final String SHORT = "MS";
+    /** log4j {@link Logger}. */
+    private static Logger logger = LogManager.getLogger(SHORT);
+
     private enum gameState {RUNNING, OVER_WON, OVER_LOST};
     private gameState stateOfGame;
     private int numberFlags, flagsNecessary;
@@ -16,6 +28,7 @@ public class Minesweeper {
      * No-args constructor: game is running, do not start with any flags.
      */
     public Minesweeper() {
+        logger.info("{}:", getClass());
         stateOfGame = gameState.RUNNING;
         numberFlags = 0;
         flagsNecessary = 12;
@@ -33,6 +46,7 @@ public class Minesweeper {
      * A tile has been triggered - this method will handle it (WORK IN PROGRESS)
      */
     public void tileHandled(Tile other) {
+/*
         Tile.State handling = other.getState();
         if (Tile.State.BOMB.equals(handling)) {
             //TODO: handle bomb-hit
@@ -43,6 +57,7 @@ public class Minesweeper {
         else {
             //TODO: handle showing of tile
         }
+*/
         winCondition();
     }
     

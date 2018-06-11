@@ -1,14 +1,29 @@
+/*
+ * Stopwatch.java
+ */
+package minesweeper;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
+import org.apache.logging.log4j.*;
 
-public class StopWatch {
+/**
+ * DESCRIBE {@link Stopwatch} HERE.
+ *
+ * @author 2017-2018 APCS
+ * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
+ * @author David C. Petty <dpetty@winchesterps.org>
+ */
+public class Stopwatch {
+    /** log4j {@link Logger}. */
+    private static Logger logger = LogManager.getLogger(Minesweeper.SHORT);
   
   private boolean isRunning;
   private long startTime;
  
-  public StopWatch() {
+  public Stopwatch() {
+      logger.info(this);
     isRunning = false; 
   }
   
