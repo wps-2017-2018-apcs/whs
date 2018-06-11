@@ -10,7 +10,7 @@ import org.apache.logging.log4j.*;
  *
  * @author 2017-2018 APCS
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
- * @author David C. Petty <dpetty@winchesterps.org>
+ * @author David C. Petty // https://github.com/wps-dpetty
  */
 public class Minesweeper {
     /** LONG name of this project. */
@@ -23,7 +23,7 @@ public class Minesweeper {
     private enum gameState {RUNNING, OVER_WON, OVER_LOST};
     private gameState stateOfGame;
     private int numberFlags, flagsNecessary;
-    
+
     /**
      * No-args constructor: game is running, do not start with any flags.
      */
@@ -33,7 +33,7 @@ public class Minesweeper {
         numberFlags = 0;
         flagsNecessary = 12;
     }
-    
+
     /**
      * Adds to a flag when a flag tile is uncovered. Invoked by {@link Tile}.
      * Tile class. Currently private.
@@ -41,9 +41,10 @@ public class Minesweeper {
     private void addFlag() {
         numberFlags++;
     }
-    
+
     /**
      * A tile has been triggered - this method will handle it (WORK IN PROGRESS)
+     * @param other NOT SURE WHAT OTHER IS
      */
     public void tileHandled(Tile other) {
 /*
@@ -60,7 +61,7 @@ public class Minesweeper {
 */
         winCondition();
     }
-    
+
     /**
      * Has the state of the game changed yet?
      */

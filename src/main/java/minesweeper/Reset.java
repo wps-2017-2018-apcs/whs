@@ -13,7 +13,7 @@ import org.apache.logging.log4j.*;
  *
  * @author 2017-2018 APCS
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
- * @author David C. Petty <dpetty@winchesterps.org>
+ * @author David C. Petty // https://github.com/wps-dpetty
  */
 public class Reset extends JButton implements ActionListener {
     /** log4j {@link Logger}. */
