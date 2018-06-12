@@ -3,9 +3,9 @@
  */
 package minesweeper;
 
-import javax.swing.*;
-import java.awt.*;
+//import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 import org.apache.logging.log4j.*;
 
 /**
