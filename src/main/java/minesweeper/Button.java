@@ -61,8 +61,8 @@ public class Button extends JButton implements ActionListener {
         String ac = e.getActionCommand();
         // RED_FLAG: put this in a static method somewhere
         assert ac.indexOf(",") >= 0 : "bad button: " + ac;
-	    int x = new Integer(ac.substring(0, ac.indexOf(","))); // My IDE says this constructor is now deprecated? Is there another one we could possibly use
-	    int y = new Integer(ac.substring(ac.indexOf(",") + 1));//
+        int x = new Integer(ac.substring(0, ac.indexOf(",")));
+        int y = new Integer(ac.substring(ac.indexOf(",") + 1));
         // RED_FLAG: simply something to do when the mouse is clicked
         Button button = Main.getGrid().findButton(x, y);
         if (button != null)
