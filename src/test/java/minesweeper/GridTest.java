@@ -1,5 +1,5 @@
 /*
- * TileTest.java
+ * GridTest.java
  *
  * @author 2017-2018 APCS
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
@@ -10,9 +10,9 @@ package minesweeper;
 import org.junit.*;
 
 /**
- * Unit test for {@link Tile}.
+ * Unit test for {@link Grid}.
  */
-public class TileTest {
+public class GridTest {
     /**
      * Set up before every test.
      */
