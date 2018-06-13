@@ -15,7 +15,7 @@ import org.apache.logging.log4j.*;
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
  * @author David C. Petty // https://github.com/wps-dpetty
  */
-public class Reset extends JButton implements ActionListener {
+public class Reset extends JButton implements ActionListener {  // Need to ensure it completely wipes game State. Especially because if you win or lose, You don't want that condition dogging you
     /** log4j {@link Logger}. */
     private static Logger logger = LogManager.getLogger(Minesweeper.SHORT);
 

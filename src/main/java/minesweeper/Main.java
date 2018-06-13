@@ -128,7 +128,7 @@ public class Main extends JFrame {
         //resetTimer();
         if (resetTimer || (!sw.isStopWatchRunning())) 
         {
-            sw.startStopWatch();
+            sw.startStopWatch();// Traditionally Stopwatch is only started after the first click on the grid...
             javax.swing.Timer mainTimer = new javax.swing.Timer(100, new ActionListener(){
                 public void actionPerformed( ActionEvent e ) {
                     timerLabel.setText(sw.getFormattedElapsedTime());
