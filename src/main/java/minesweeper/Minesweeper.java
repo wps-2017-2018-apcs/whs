@@ -28,7 +28,7 @@ public class Minesweeper {
      * No-args constructor: game is running, do not start with any flags.
      */
     public Minesweeper() {
-        logger.info("{}:", getClass());
+        logger.info("{}:", getClass().getName());
         stateOfGame = gameState.RUNNING;
         numberFlags = 0;
         flagsNecessary = 12;

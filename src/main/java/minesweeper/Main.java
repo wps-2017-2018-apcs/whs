@@ -62,7 +62,8 @@ public class Main extends JFrame {
         this.rows = rows;
         this.cols = cols;
         this.mines = mines;
-        logger.info("{}: {} ({}x{}) {}", getClass(), name, rows, cols, mines);
+        logger.info("{}: {} ({}x{}) {}",
+            getClass().getName(), name, rows, cols, mines);
     }
 
     //////////////////////////////// CLASSES ///////////////////////////////

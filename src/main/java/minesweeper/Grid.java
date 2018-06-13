@@ -53,6 +53,7 @@ public class Grid extends JPanel {
         //final int height = side * cols;   // no need to set preferred size
         setBackground(Color.BLACK);
         setVisible(true);
+        logger.info(this);
     }
 
     /** Create {@link Grid} of square {@link Button}s with {@link MINIMUM_SIDE} 
@@ -122,8 +123,8 @@ public class Grid extends JPanel {
      */
     @Override
     public void setSize(int width, int height) {
-        logger.info("setSize: (from) {} (to) {}",
-            getSize(), new Dimension(width, height));
+        logger.info("{}.setSize: (from) {} (to) {}",
+            getClass().getName(), getSize(), new Dimension(width, height));
         logger.info("({},{}) ({},{}) {} == {}?",
             width, height, rows, cols, width * rows, height * cols);
         assert width * rows == height * cols : "bad aspect ratio";
@@ -164,4 +165,17 @@ public class Grid extends JPanel {
         return ((JFrame) SwingUtilities.getWindowAncestor(this)).getPreferredSize();
     }
 */
+
+    /** Return {@link String} representation of <tt>this</tt>.
+     * @return {@link String} representation of <tt>this</tt>
+     */
+    @Override
+    public String toString() {
+        return new StringBuilder()
+            .append(getClass().getName()).append(":")
+            .append(getSize()).append(":").append("[")
+            .append(rows).append(",").append(cols).append(",")
+            .append(side).append("]")
+            .toString();
+    }
 }
