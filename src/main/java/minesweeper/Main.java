@@ -9,7 +9,7 @@ import java.awt.event.*;
 import javax.swing.*;
 //import javax.swing.border.*;
 //import java.text.*;
-//import java.util.*;
+import java.util.*;
 import org.apache.logging.log4j.*;
 
 /**
@@ -17,17 +17,31 @@ import org.apache.logging.log4j.*;
  *
  * @author 2017-2018 APCS
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
- * @author David C. Petty // https://github.com/wps-dpetty
+ * @author <a href="https://github.com/wps-dpetty">David C. Petty</a>
  */
 public class Main extends JFrame {
+
+    //////////////////////////////// FIELDS ////////////////////////////////
+
     /** log4j {@link Logger}. */
     private static Logger logger = LogManager.getLogger(Minesweeper.SHORT);
+    /** Number of rows in grid. */
+    private static int rows;
+    /** Number of cols in grid. */
+    private static int cols;
+    /** Number of mines in grid. */
+    private static int mines;
 
-    private static int row = 16, col = 30;
-    private static int mines = 99;
-
+    /** {@link Stopwatch} <strong>FOR WHAT?</strong> */
     private static Stopwatch sw;
+
+    /** Single {@link JPanel} in main {@link JFrame} so as to accurately 
+     * calculate drawing area.
+     */
+    private static JPanel panel;
+    /** {@link JLabel} to display timer. */
     private static JLabel timerLabel;
+    /** {@link Grid} of {@link Button}s. */
     private static Grid grid;
 
     // RED_FLAG: these fields are not used
@@ -35,22 +49,67 @@ public class Main extends JFrame {
     // private static int currentSecond;
     // private static Calendar calendar;
 
-    //GridLayout experimentLayout = new GridLayout(row, col);
+    ///////////////////////////// CONSTRUCTORS /////////////////////////////
 
-    public Main(String name) {
+    /** Construct a {@link Main} frame.
+     * @param name frame title
+     * @param rows number of rows in grid
+     * @param cols number of columns in grid
+     * @param mines number of mines in grid
+     */
+    public Main(String name, int rows, int cols, int mines) {
         super(name);
-        sw = new Stopwatch();
-        logger.info("{}: {}", getClass(), name);
+        this.rows = rows;
+        this.cols = cols;
+        this.mines = mines;
+        logger.info("{}: {} ({}x{}) {}", getClass(), name, rows, cols, mines);
     }
 
+    //////////////////////////////// CLASSES ///////////////////////////////
+
+    /** PanelListener listens for resize events and adjusts grid accordingly. */
+    private static class PanelListener extends ComponentAdapter {
+        public void componentResized(ComponentEvent e) {
+            // Log layoutDimensions from GridBagLayout to help calculate resize.
+            GridBagLayout layout = (GridBagLayout) panel.getLayout();
+            int[][] dims = layout.getLayoutDimensions();
+            int xSum = 0, ySum = 0;
+            for (int i = 0; i < dims[0].length; i++) xSum += dims[0][i];
+            for (int j = 0; j < dims[1].length; j++) ySum += dims[1][j];
+            int igw = grid.getCols() * grid.getSide();  // initial grid width
+            int igh = grid.getRows() * grid.getSide();  // initial grid height
+            double rgw = xSum;                          // reset grid width
+            double rgh = dims[1][2] + panel.getHeight() - ySum; // reset grid height
+            logger.info("{} {} ({},{}) [{}x{} {}x{}: {} {}]",
+                e, Arrays.deepToString(dims), xSum, ySum, igw, igh, rgw, rgh,
+                rgw / grid.getCols(), rgh / grid.getRows());
+            // Calculate minimum square button size & set grid size accordingly.
+            int side = (int) Math.min(rgw / grid.getCols(), rgh / grid.getRows());
+            grid.setSize(side * grid.getCols(), side * grid.getRows());
+        }
+    }
+
+    //////////////////////////////// METHODS ///////////////////////////////
+
+    /** Return {@link Grid} component.
+     * @return grid component
+     */
     public static Grid getGrid() { return grid; }
 
+    /** Create and show main graphical user interface. */
     private static void createAndShowGUI() {
-        //Create and set up the window.
-        Main frame = new Main("Minesweeper");
+        // Create and set up the window frame.
+        // REDFLAG: mines should be a function of level, rows, and cols
+        Main frame = new Main("Minesweeper", 16, 30, 99);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        frame.setLayout(new GridBagLayout());
+        // Use single JPanel in frame to get full width & height.
+        panel = new JPanel();
+        panel.addComponentListener(new PanelListener());
+
+        // Initialize panel layout.
+        GridBagLayout layout = new GridBagLayout();
+        panel.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
 
         // Display mineCount.
@@ -64,13 +123,14 @@ public class Main extends JFrame {
         c.gridy = 0;
         c.ipadx = 10;
         c.weightx = 0.5;
-        frame.getContentPane().add(mineCount, c);
+        panel.add(mineCount, c);
   
         // Display smile.
         Image image = Images.getImage("/images/felix.gif");
-        ImageIcon smileicon = new ImageIcon(image);
-        JButton smile = new JButton(smileicon);
-        //smile.setPreferredSize(new Dimension(35, 35));
+        ImageIcon icon = new ImageIcon(image);
+        Dimension size = new Dimension(icon.getIconWidth(), icon.getIconHeight());
+        JButton smile = new JButton(icon);
+        smile.setPreferredSize(size);
         c = new GridBagConstraints();
         c.anchor = GridBagConstraints.PAGE_START;
         c.anchor = GridBagConstraints.CENTER;
@@ -79,7 +139,9 @@ public class Main extends JFrame {
         c.gridy = 0;
         c.ipadx = 10;
         c.weightx = 0.5;
-        frame.getContentPane().add(smile, c);
+        panel.add(smile, c);
+
+        sw = new Stopwatch();// initialize sw
 
         // Display timerLabel.
         timerLabel = new JLabel("00:00", SwingConstants.CENTER);
@@ -92,7 +154,7 @@ public class Main extends JFrame {
         c.gridy = 0;
         c.ipadx = 10;
         c.weightx = 0.5;
-        frame.getContentPane().add(timerLabel, c);
+        panel.add(timerLabel, c);
 
         // Display separator.
         JSeparator separator = new JSeparator();
@@ -104,10 +166,10 @@ public class Main extends JFrame {
         c.ipadx = 0;
         c.gridwidth = 3;
         c.weightx = 0.5;
-        frame.getContentPane().add(separator, c);  
+        panel.add(separator, c);
 
         // Display grid.
-        grid = new Grid(row, col);
+        grid = new Grid(rows, cols);
         c = new GridBagConstraints();
         c.anchor = GridBagConstraints.SOUTH;
         c.fill = GridBagConstraints.NONE;
@@ -116,9 +178,10 @@ public class Main extends JFrame {
         c.ipadx = 0;
         c.gridwidth = 3;
         c.weightx = 0.5;
-        frame.getContentPane().add(grid, c);  
+        panel.add(grid, c);
 
-        //Display the window.
+        // Display frame.
+        frame.add(panel);
         frame.pack();
         frame.setMinimumSize(frame.getSize());  // layout will not get smaller
         frame.setVisible(true);
@@ -138,6 +201,9 @@ public class Main extends JFrame {
         }      
     }
 
+    /** Minesweeper main method.
+     * @param args command-line arguments
+     */
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {

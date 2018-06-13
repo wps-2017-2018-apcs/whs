@@ -18,7 +18,7 @@ import org.apache.logging.log4j.*;
  *
  * @author 2017-2018 APCS
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
- * @author David C. Petty // https://github.com/wps-dpetty
+ * @author <a href="https://github.com/wps-dpetty">David C. Petty</a>
  */
 public class Button extends JButton implements ActionListener {
 
@@ -31,9 +31,13 @@ public class Button extends JButton implements ActionListener {
     /** This {@link Button}'s column. */
     private int col;
 
-    private static Button test;
     ///////////////////////////// CONSTRUCTORS /////////////////////////////
 
+    /** Create square {@link Button}.
+     * @param row number of row
+     * @param col number of column
+     * @param side minimum size of square button
+     */
     public Button(int row, int col, int side) {
         super();
         this.row = row;
@@ -41,37 +45,30 @@ public class Button extends JButton implements ActionListener {
         Dimension initialSize = new Dimension(side, side);
         setPreferredSize(initialSize);
         setSize(initialSize);
-        setActionCommand(row + "," + col);
+        setActionCommand(row, col);
         addActionListener(this);
         setBorderPainted(false);
         setOpaque(true);
         setVisible(true);
-        logger.info("{}:{}:({})", getClass(), initialSize, paramString());
+        logger.info("{}:{}:\"{}\":({})",
+            getClass(), initialSize, getActionCommand(), paramString());
     }
 
     //////////////////////////////// METHODS ///////////////////////////////
 
-    /** Return logger for this {@link Button}.
-     * @return logger for this {@link Button}
+    /** Invoked when an action occurs.
+     * @param e event triggering action
      */
-    public Logger getLogger() { return logger; }
-
     public void actionPerformed(ActionEvent e) {
-        logger.info("{}:{}:\"{}\"", getClass(), e, e.getActionCommand());
-        String ac = e.getActionCommand();
-        // RED_FLAG: put this in a static method somewhere
-        assert ac.indexOf(",") >= 0 : "bad button: " + ac;
-	    int x = new Integer(ac.substring(0, ac.indexOf(","))); // My IDE says this constructor is now deprecated? Is there another one we could possibly use
-	    int y = new Integer(ac.substring(ac.indexOf(",") + 1));//
+        logger.info("{}:{}", getClass(), e);
+        Point point = parseActionCommand(e.getActionCommand());
         // RED_FLAG: simply something to do when the mouse is clicked
-        Button button = Main.getGrid().findButton(x, y);
-        if (button != null)
+        Button button = Main.getGrid().findButton(point.x, point.y);
+        if (button != null) // RED_FLAG: what to do if button not found?
             button.setBackground(Color.RED);
     }
 
-    /**
-     * Paint the component using a {@link Graphics} rendering object.
-     *
+    /** Paint the component using a {@link Graphics} rendering object.
      * @param g the Graphics rendering object
      */
     @Override
@@ -80,13 +77,27 @@ public class Button extends JButton implements ActionListener {
         g.drawImage(Images.getBombImage(), 0, 0, getWidth(), getHeight(), null);
     }
 
+    /** Resizes this component so that it has width <tt>width</tt> and 
+     * height <tt>height</tt>. This method changes layout-related 
+     * information, and therefore, invalidates the component hierarchy.
+     * @param width new width of this component in pixels
+     * @param height new height of this component in pixels
+     */
     @Override
     public void setSize(int width, int height) {
-        logger.info("setSize: (from) {} (to) {}", getSize(), new Dimension(width, height));
+        logger.trace("{}.setSize: (from) {} (to) {}",
+            getClass(), getSize(), new Dimension(width, height));
         int side = Math.min(width, height);
-        super.setSize(side, side);  // keep Button square
+        Dimension size = new Dimension(side, side);
+        super.setSize(side, side);
+        setPreferredSize(size);
     }
 
+    /** Resizes this component so that it has width <tt>size.width</tt> and 
+     * height <tt>size.height</tt>. This method changes layout-related 
+     * information, and therefore, invalidates the component hierarchy.
+     * @param size dimension specifying the new size of this component
+     */
     @Override
     public void setSize(Dimension size) {
         // RED_FLAG: setSize(Dimension) calls setSize(int, int) else infinite
@@ -94,12 +105,38 @@ public class Button extends JButton implements ActionListener {
         setSize(size.width, size.height);
     }
 
+    /** Return {@link String} representation of <tt>this</tt>.
+     * @return {@link String} representation of <tt>this</tt>
+     */
     @Override
     public String toString() {
         return new StringBuilder()
             .append(getClass().getName()).append(":")
             .append(getLocation()).append(":").append(getSize()).append(":")
-            .append("(").append(getActionCommand()).append(")")
+            .append("\"").append(getActionCommand()).append("\"")
             .toString();
+    }
+
+    /** {@link JButton#setActionCommand(java.lang.String)
+     * setActionCommand}("<tt>row</tt>,<tt>col</tt>").
+     * @param row row of this {@link Button}
+     * @param col column of this {@link Button}
+     */
+    public void setActionCommand(int row, int col) {
+        setActionCommand(row + "," + col);
+    }
+
+    /** Return (<tt>row</tt>,<tt>col</tt>) {@link Point} parsed from 
+     * <tt>actionCommand</tt>.
+     * @param actionCommand "<tt>row</tt>,<tt>col</tt>" {@link String}
+     * @return (<tt>row</tt>,<tt>col</tt>) {@link Point}
+     */
+    public static Point parseActionCommand(String actionCommand) {
+        int comma = actionCommand.indexOf(",");
+        assert comma > 0 && comma < actionCommand.length()
+            : "bad button command: \"" + actionCommand + "\"";
+        return new Point(
+            new Integer(actionCommand.substring(0, comma)),
+            new Integer(actionCommand.substring(comma + 1)));
     }
 }
