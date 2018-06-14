@@ -15,7 +15,7 @@ import org.apache.logging.log4j.*;
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
  * @author David C. Petty // https://github.com/wps-dpetty
  */
-public class Stopwatch {
+public class Stopwatch {// Just a note, Stopwatch is traditionally started after the first click
     /** log4j {@link Logger}. */
     private static Logger logger = LogManager.getLogger(Minesweeper.SHORT);
 
@@ -62,7 +62,7 @@ public class Stopwatch {
         {
             double elapsedTime = System.currentTimeMillis() - startTime;
             int seconds = (int)(elapsedTime / 1000.0);
-            int minutes = (int)(seconds / 60);
+            int minutes = seconds / 60;
             seconds -= minutes * 60;
             //result = minutes + ":" + seconds;
             result = String.format("%02d:%02d", minutes, seconds);

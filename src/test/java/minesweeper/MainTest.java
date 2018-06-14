@@ -3,7 +3,7 @@
  *
  * @author 2017-2018 APCS
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
- * @author David C. Petty <dpetty@winchesterps.org>
+ * @author <a href="https://github.com/wps-dpetty">David C. Petty</a>
  */
 package minesweeper;
 
