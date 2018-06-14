@@ -22,7 +22,8 @@ public class Minesweeper {
 
     private enum gameState {RUNNING, OVER_WON, OVER_LOST};
     private gameState stateOfGame;
-    private int numberFlags, flagsNecessary;
+    private int numberFlags, 
+    private Tile[][] gameArray;
 
     /**
      * No-args constructor: game is running, do not start with any flags.
@@ -31,9 +32,9 @@ public class Minesweeper {
         logger.info("{}:", getClass().getName());
         stateOfGame = gameState.RUNNING;
         numberFlags = 0;
-        flagsNecessary = 12;
+        gameArray = this.getMines();
     }
-
+    
     /**
      * Adds to a flag when a flag tile is uncovered. Invoked by {@link Tile}.
      * Tile class. Currently private.
@@ -42,6 +43,16 @@ public class Minesweeper {
         numberFlags++;
     }
 
+    public static Tile[][] getMines()    {
+        boolean[][] bombSpots = new RandPlace(16,30,99).valid().convert2D();
+        Tile[][] tileArray;
+        for (int i = 0; i < 16; i++)    
+            for (int k = 0; k < 30; k++)    {
+               tileArray[i][k] = new  Tile(i, k, bombSpots[i][k]);
+                
+            }
+        return tileArray;
+    }
     /**
      * A tile has been triggered - this method will handle it (WORK IN PROGRESS)
      * @param other NOT SURE WHAT OTHER IS
@@ -66,8 +77,8 @@ public class Minesweeper {
      * Has the state of the game changed yet?
      */
     public void winCondition() {
-        if (numberFlags >= flagsNecessary) {
-            stateOfGame = gameState.OVER_WON;
+       // if (numberFlags >= flagsNecessary) {
+      //      stateOfGame = gameState.OVER_WON;
         } 
         //else if () { /* I've mentioned bombs plenty now */
             //stateOfGame = gameState.OVER_LOST;

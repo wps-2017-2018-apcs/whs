@@ -24,12 +24,13 @@ public class Tile extends JButton implements ActionListener {
     private int tileValue;
     private int tileNumber;
     
-    public Tile(int r, int c) {
+    public Tile(int r, int c, boolean m) {
         logger.info(this);
         addActionListener(this);
         row = r;
         column = c;
         tileValue = 0;
+        isMine = b;
     }
 
     public void actionPerformed(ActionEvent e) {
