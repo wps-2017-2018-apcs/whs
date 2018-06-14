@@ -1,5 +1,9 @@
 package minesweeper;
 
+/**
+ * RandPlace- looks convoluted; is solely for deciding where bombs are- randomly placing them, if you will
+ * @author Kevin Khaghani // 1907024@wpsstudent.com
+ */
 public class RandPlace {
 	private int row, col, numTrue;
 	private boolean[] truthArr;
