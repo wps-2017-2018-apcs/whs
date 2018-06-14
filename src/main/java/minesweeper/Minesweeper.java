@@ -43,6 +43,10 @@ public class Minesweeper {
         numberFlags++;
     }
 
+    public Tile[][] getGameArray() {
+        return gameArray;
+    }
+
     public static Tile[][] getMines()    {
         boolean[][] bombSpots = new RandPlace(16,30,99).valid().convert2D();
         Tile[][] tileArray;
