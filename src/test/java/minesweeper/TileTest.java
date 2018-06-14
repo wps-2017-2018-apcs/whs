@@ -26,7 +26,7 @@ public class TileTest {
     public void tearDown() {
     }
     /**
-     * Rigourous Test :-)
+     * Rigorous Test :-)
      */
     @Test
     public void testApp() {
