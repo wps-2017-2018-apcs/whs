@@ -22,8 +22,8 @@ public class Minesweeper {
 
     private enum gameState {RUNNING, OVER_WON, OVER_LOST};
     private gameState stateOfGame;
-    private int numberFlags, 
-    private Tile[][] gameArray;
+    private int numberFlags;
+    private static Tile[][] gameArray;
 
     /**
      * No-args constructor: game is running, do not start with any flags.
@@ -43,13 +43,13 @@ public class Minesweeper {
         numberFlags++;
     }
 
-    public Tile[][] getGameArray() {
+    public static Tile[][] getGameArray() {
         return gameArray;
     }
 
     public static Tile[][] getMines()    {
-        boolean[][] bombSpots = new RandPlace(16,30,99).valid().convert2D();
-        Tile[][] tileArray;
+        boolean[][] bombSpots = (new RandPlace(16,30,99)).convert2D(); //valid()?
+        Tile[][] tileArray = new Tile[0][0];
         for (int i = 0; i < 16; i++)    
             for (int k = 0; k < 30; k++)    {
                tileArray[i][k] = new  Tile(i, k, bombSpots[i][k]);
@@ -81,9 +81,9 @@ public class Minesweeper {
      * Has the state of the game changed yet?
      */
     public void winCondition() {
-       // if (numberFlags >= flagsNecessary) {
-      //      stateOfGame = gameState.OVER_WON;
-        } 
+        // if (numberFlags >= flagsNecessary) {
+        //      stateOfGame = gameState.OVER_WON;
+        //}
         //else if () { /* I've mentioned bombs plenty now */
             //stateOfGame = gameState.OVER_LOST;
         //}

@@ -30,7 +30,7 @@ public class Tile extends JButton implements ActionListener {
         row = r;
         column = c;
         tileValue = 0;
-        isMine = b;
+        isMine = m;
     }
 
     public void actionPerformed(ActionEvent e) {
