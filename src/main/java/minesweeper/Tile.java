@@ -22,6 +22,7 @@ public class Tile extends JButton implements ActionListener {
     private int column;
     private boolean isMine;
     private int tileValue;
+    private int tileNumber;
     
     public Tile(int r, int c) {
         logger.info(this);
@@ -43,6 +44,8 @@ public class Tile extends JButton implements ActionListener {
     public int getCol() {
         return column;
     }
+
+    public boolean getIsMine() { return isMine; }
     
     /**
      * Method for Main to use to read the value of the tile and, in turn, display it on the eventual board
@@ -63,5 +66,21 @@ public class Tile extends JButton implements ActionListener {
      */
     public void incrementTile() {
   	  tileValue++;
+    }
+
+    public void setNumber()
+    {
+        int count = 0;
+        for (int i = row - 1; i < row + 2; i ++)
+        {
+            for (int j = column - 1; j < column + 2; column ++)
+            {
+                if (i >= 0 && i < 16 && j >= 0 && j < 16 && getGameArray(i, j).getIsMine())
+                {
+                    count++;
+                }
+            }
+        }
+        tileNumber = count;
     }
 }
