@@ -72,11 +72,12 @@ public class Tile extends JButton implements ActionListener {
     public void setNumber()
     {
         int count = 0;
+        Tile[][] gameArray = Minesweeper.getGameArray();
         for (int i = row - 1; i < row + 2; i ++)
         {
             for (int j = column - 1; j < column + 2; column ++)
             {
-                if (i >= 0 && i < 16 && j >= 0 && j < 16 && getGameArray(i, j).getIsMine())
+                if (i >= 0 && i < 16 && j >= 0 && j < 16 && gameArray[i][j].getIsMine())
                 {
                     count++;
                 }
