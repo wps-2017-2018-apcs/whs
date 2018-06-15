@@ -20,28 +20,52 @@ import org.apache.logging.log4j.*;
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
  * @author David C. Petty // https://github.com/wps-dpetty
  */
-public class Images {
+public enum Images {
+
+    COVER("/images/minesweeper-cover.svg-600x600.png"),
+    FLAG("/images/minesweeper-flag.svg-600x600.png"),
+    MINE("/images/minesweeper-mine.svg-600x600.png"),
+    NUMBER1("/images/1.svg-600x600.png"),
+    NUMBER2("/images/2.svg-600x600.png"),
+    NUMBER3("/images/3.svg-600x600.png"),
+    NUMBER4("/images/4.svg-600x600.png"),
+    NUMBER5("/images/5.svg-600x600.png"),
+    NUMBER6("/images/6.svg-600x600.png"),
+    NUMBER7("/images/7.svg-600x600.png"),
+    NUMBER8("/images/8.svg-600x600.png");
 
     //////////////////////////////// FIELDS ////////////////////////////////
 
-    /** log4j {@link Logger}. */
-    private static Logger logger = LogManager.getLogger(Minesweeper.SHORT);
-    /** Path to the flag image file.*/
-    private static final String FLAG_PATH = "/images/Minesweeper_bomb-600x600.svg.png";
-    /** Path to the bomb image file.*/
-    private static final String BOMB_PATH = "/images/Minesweeper_bomb-600x600.svg.png";       
-    /** The {@link BufferedImage} to be displayed when a flag. */
-    private static Image flagImage;
-    /** The {@link BufferedImage} to be displayed when a flag. */
-    private static Image bombImage;
+    /** The pathname for {@link BufferedImage} to be displayed. */
+    private final String path;
+    /** The {@link BufferedImage} to be displayed. */
+    private final Image image;
 
-    static {
-        flagImage = getImage(FLAG_PATH);
-        bombImage = getImage(BOMB_PATH);        
-    }
     ///////////////////////////// CONSTRUCTORS /////////////////////////////
 
+    private Images(String path) {
+        this.path = path;
+        this.image = getImage(path);
+    }
+
+    //////////////////////////////// METHODS ///////////////////////////////
+
+    /** Return pathname for {@link BufferedImage} to be displayed.
+     * @return pathname for {@link BufferedImage} to be displayed
+     */
+    public String path() { return path; }
+    /** Return pathname for {@link BufferedImage} to be displayed.
+     * @return pathname for {@link BufferedImage} to be displayed
+     */
+    public Image image() { return image; }
+
+    /** Return {@link Image} associated with path.
+     * @param path pathname for {@link BufferedImage}
+     * @return {@link Image} associated with path
+     */
     public static Image getImage(String path) {
+        // log4j Logger cannot be a field of this enum.
+        Logger logger = LogManager.getLogger(Minesweeper.SHORT);
         BufferedImage image = null;
         try {
             InputStream is = Images.class.getResourceAsStream(path);
@@ -54,19 +78,4 @@ public class Images {
                 Images.class, path, image.getWidth(), image.getHeight());
         return image;
     }
-
-    //////////////////////////////// METHODS ///////////////////////////////
-
-    /** Return logger for this {@link Image}.
-     * @return logger for this {@link Image}
-     */
-    public static Logger getLogger() { return logger; }
-    /** Return {@link Image} for flag.
-     * @return Return {@link Image} for flag
-     */
-    public static Image getFlagImage() { return flagImage; }
-    /** Return Return {@link Image} for bomb.
-     * @return Return {@link Image} for flag
-     */
-    public static Image getBombImage() { return bombImage; }
 }
