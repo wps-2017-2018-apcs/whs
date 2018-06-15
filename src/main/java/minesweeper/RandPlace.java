@@ -103,4 +103,21 @@ public class RandPlace {
 		
 		return truth2D;
 	}
+	
+	/**
+	 * Generates a usable 2D array from any passed boolean[] array- such as the one valid() makes.
+	 * @return the 2D array
+	 */
+	public boolean[][] generate2D() {
+		boolean[] arr = this.valid();
+		boolean[][] truth2D = new boolean[row][col];
+		
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < col; j++) {
+				truth2D[i][j] = arr[i * col + j];
+			}
+		}
+		
+		return truth2D;
+	}
 }
