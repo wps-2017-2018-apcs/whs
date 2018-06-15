@@ -44,7 +44,7 @@ public class Main extends JFrame {
     /** {@link Grid} of {@link Button}s. */
     private static Grid grid;
 
-    // RED_FLAG: these fields are not used
+	// TODO: these fields are not used
     // private static final SimpleDateFormat sdfTimer  = new SimpleDateFormat("mm:ss");
     // private static int currentSecond;
     // private static Calendar calendar;
@@ -59,9 +59,9 @@ public class Main extends JFrame {
      */
     public Main(String name, int rows, int cols, int mines) {
         super(name);
-        this.rows = rows;
-        this.cols = cols;
-        this.mines = mines;
+	    Main.rows = rows;
+	    Main.cols = cols;
+	    Main.mines = mines;
         logger.info("{}: {} ({}x{}) {}",
             getClass().getName(), name, rows, cols, mines);
     }
