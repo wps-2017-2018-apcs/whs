@@ -74,7 +74,12 @@ public class Button extends JButton implements ActionListener {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(Images.getBombImage(), 0, 0, getWidth(), getHeight(), null);
+        // TODO: this paints all the images randomly... which is not correct
+        Images[] images = { Images.COVER, Images.MINE, Images.FLAG,
+            Images.NUMBER1, Images.NUMBER2, Images.NUMBER3, Images.NUMBER4, 
+            Images.NUMBER5, Images.NUMBER6, Images.NUMBER7, Images.NUMBER8, };
+        Images image = images[(int) (Math.random() * images.length)];
+        g.drawImage(image.image(), 0, 0, getWidth(), getHeight(), null);
     }
 
     /** Resizes this component so that it has width <tt>width</tt> and 
