@@ -144,7 +144,7 @@ public class Grid extends JPanel {
      */
     @Override
     public void setSize(Dimension size) {
-	    // TODO: setSize(Dimension) calls setSize(int, int) else infinite recursion
+        // TODO: setSize(Dimension) calls setSize(int, int) else infinite recursion
         setSize(size.width, size.height);
     }
 

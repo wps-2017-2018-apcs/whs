@@ -6,9 +6,11 @@ package minesweeper;
 import java.awt.*;
 import java.awt.event.*;
 //import java.awt.image.*;
+//import javax.imageio.*;
 import javax.swing.*;
 //import javax.swing.border.*;
 //import java.text.*;
+//import java.io.*;
 import java.util.*;
 import org.apache.logging.log4j.*;
 
@@ -44,11 +46,6 @@ public class Main extends JFrame {
     /** {@link Grid} of {@link Button}s. */
     private static Grid grid;
 
-	// TODO: these fields are not used
-    // private static final SimpleDateFormat sdfTimer  = new SimpleDateFormat("mm:ss");
-    // private static int currentSecond;
-    // private static Calendar calendar;
-
     ///////////////////////////// CONSTRUCTORS /////////////////////////////
 
     /** Construct a {@link Main} frame.
@@ -59,9 +56,9 @@ public class Main extends JFrame {
      */
     public Main(String name, int rows, int cols, int mines) {
         super(name);
-	    Main.rows = rows;
-	    Main.cols = cols;
-	    Main.mines = mines;
+        Main.rows = rows;
+        Main.cols = cols;
+        Main.mines = mines;
         logger.info("{}: {} ({}x{}) {}",
             getClass().getName(), name, rows, cols, mines);
     }
