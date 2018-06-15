@@ -124,7 +124,7 @@ public class Main extends JFrame {
         panel.add(mineCount, c);
   
         // Display smile.
-        Image image = Images.getImage("/images/smiley.jpeg");
+        Image image = Images.getImage("/images/smiley1.jpeg");
         ImageIcon icon = new ImageIcon(image);
         Dimension size = new Dimension(icon.getIconWidth(), icon.getIconHeight());
         JButton smile = new JButton(icon);
