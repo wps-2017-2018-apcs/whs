@@ -55,6 +55,14 @@ public class Minesweeper {
                tileArray[i][k] = new  Tile(i, k, bombSpots[i][k]);
                 
             }
+        for (Tile[] rows: tileArray)
+        {
+            for (Tile tile: rows)
+            {
+                if (!tile.getIsMine())
+                    tile.setTileValue();
+            }
+        }
         return tileArray;
     }
     /**
