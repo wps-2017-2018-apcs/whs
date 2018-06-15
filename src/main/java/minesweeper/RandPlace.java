@@ -10,14 +10,14 @@ public class RandPlace {
 	
 	/**
 	 * This whole class is to create a boolean array
-	 * @param r
-	 * @param c
-	 * @param number
-	 * @precondition numTrue <= row * col
+	 * @param r, rows of the array
+	 * @param c, columns of the array
+	 * @param number; for Minesweeper this is the number of mines to be placed.
+	 * @throws IllegalArgumentException if numTrue is ever be greater than (row * col)
 	 */
 	public RandPlace(int r, int c, int number) {
 		if (numTrue > row * col) {
-			throw new RuntimeException("Error: array cannot contain that many values");
+			throw new IllegalArgumentException("Error: array cannot contain that many values");
 		}
 		row = r;
 		col = c;
@@ -26,8 +26,8 @@ public class RandPlace {
 	
 	/** 
 	 * numContains counts the number of "true" or "false" (truth) in an array
-	 * @param truth
-	 * @param array
+	 * @param truth, a boolean state, "true" or "false"
+	 * @param array, any boolean[] array
 	 * @return the number of times truth appears in the array
 	 */
 	public int numContains(boolean truth, boolean[] array) {
