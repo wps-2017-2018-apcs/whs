@@ -85,7 +85,7 @@
         <version>0.9</version>
         <configuration>
           <message>Creating site for ${project.version}</message>
-          <dryrun>true</dryrun>
+
         </configuration>
         <executions>
           <execution>
