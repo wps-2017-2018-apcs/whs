@@ -22,7 +22,6 @@ public class Tile extends JButton implements ActionListener {
     private int column;
     private boolean isMine;
     private int tileValue;
-    private int tileNumber;
     
     public Tile(int r, int c, boolean m) {
         logger.info(this);
@@ -62,14 +61,12 @@ public class Tile extends JButton implements ActionListener {
     public void setTileValue(int a) {
   	  tileValue = a;
     }
-    /**
-     * Another way to modify the tileValue, incrementing by one- use this instead of the other if it suits the board-init code better
-     */
-    public void incrementTile() {
-  	  tileValue++;
-    }
 
-    public void setNumber()
+    /**
+     * Allows getMines() class in Minesweeper to assign correct tile value after all the bombs are created
+     * to all the non-mine tiles
+     */
+    public void setTileValue()
     {
         int count = 0;
         Tile[][] gameArray = Minesweeper.getGameArray();
@@ -77,12 +74,19 @@ public class Tile extends JButton implements ActionListener {
         {
             for (int j = column - 1; j < column + 2; column ++)
             {
-                if (i >= 0 && i < 16 && j >= 0 && j < 16 && gameArray[i][j].getIsMine())
+                if (i >= 0 && i < 16 && j >= 0 && j < 16 && i != row && j != column&& gameArray[i][j].getIsMine())
                 {
                     count++;
                 }
             }
         }
-        tileNumber = count;
+        tileValue = count;
+    }
+
+    /**
+     * Another way to modify the tileValue, incrementing by one- use this instead of the other if it suits the board-init code better
+     */
+    public void incrementTile() {
+  	  tileValue++;
     }
 }
