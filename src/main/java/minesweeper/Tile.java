@@ -20,7 +20,7 @@ public class Tile extends JButton implements ActionListener {
 
     private int row;
     private int column;
-    private boolean isMine;
+    private boolean isMine, isClicked;
     private int tileValue;
     
     public Tile(int r, int c, boolean m) {
@@ -30,12 +30,14 @@ public class Tile extends JButton implements ActionListener {
         column = c;
         tileValue = 0;
         isMine = m;
+        isClicked = false;
     }
 
     public void actionPerformed(ActionEvent e) {
         //System.out.print(row + " " + column);
         Main.startTimer(false);
     }
+    public boolean getIsClicked()   { return isClicked; }
 
     public int getRow() {
         return row;
