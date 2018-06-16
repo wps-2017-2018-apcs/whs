@@ -1,0 +1,96 @@
+D:\Documents\GitHub\whs\src\main\java\minesweeper\Minesweeper.java
+    Error:Error:line (6)Cannot resolve symbol 'logging'
+    Warning:Warning:line (23)Access can be package-private
+    Error:Error:line (25)Cannot resolve symbol 'Logger'
+    Error:Error:line (27)Cannot resolve symbol 'Logger'
+    Error:Error:line (27)Cannot resolve symbol 'LogManager'
+    Warning:Warning:line (31)Unnecessary semicolon ';'
+    Error:Error:line (40)Cannot resolve method 'info(java.lang.String, java.lang.String)'
+    Warning:Warning:line (43)Static member 'minesweeper.Minesweeper.getMines()' accessed via instance reference
+    Warning:Warning:line (54)Access can be package-private
+    Warning:Warning:line (58)Access can be private
+    Warning:Warning:line (63)Array index is out of bounds
+    Warning:Warning:line (66)Array 'tileArray' is always empty
+    Warning:Warning:line (99)Access can be private
+    Warning:Warning:line (100)'for' loop replaceable with 'foreach'
+D:\Documents\GitHub\whs\src\main\java\minesweeper\Tile.java
+    Error:Error:line (8)Cannot resolve symbol 'logging'
+    Error:Error:line (20)Cannot resolve symbol 'Logger'
+    Error:Error:line (22)Cannot resolve symbol 'Logger'
+    Error:Error:line (22)Cannot resolve symbol 'LogManager'
+    Warning:Warning:line (29)Access can be package-private
+    Error:Error:line (30)Cannot resolve method 'info(minesweeper.Tile)'
+    Warning:Warning:line (44)Access can be package-private
+    Warning:Warning:line (56)Access can be package-private
+    Warning:Warning:line (82)Access can be package-private
+D:\Documents\GitHub\whs\src\main\java\minesweeper\Grid.java
+    Error:Error:line (10)Cannot resolve symbol 'logging'
+    Error:Error:line (24)Cannot resolve symbol 'Logger'
+    Error:Error:line (26)Cannot resolve symbol 'Logger'
+    Error:Error:line (26)Cannot resolve symbol 'LogManager'
+    Warning:Warning:line (30)Access can be private
+    Warning:Warning:line (34)Access can be private
+    Warning:Warning:line (38)Access can be private
+    Warning:Warning:line (62)Access can be private
+    Error:Error:line (74)Cannot resolve method 'info(minesweeper.Grid)'
+    Error:Error:line (78)Cannot resolve symbol 'MINIMUM_SIDE'
+    Warning:Warning:line (84)Access can be package-private
+    Error:Error:line (89)Cannot resolve symbol 'DEFAULT_ROWS'
+    Error:Error:line (90)Cannot resolve symbol 'DEFAULT_COLS'
+    Error:Error:line (91)Cannot resolve symbol 'MINIMUM_SIDE'
+    Warning:Warning:line (104)Access can be package-private
+    Warning:Warning:line (113)Access can be package-private
+    Warning:Warning:line (122)Access can be package-private
+    Warning:Warning:line (134)Access can be package-private
+    Error:Error:line (167)Cannot resolve method 'info(java.lang.String, java.lang.String, java.awt.Dimension, java.awt.Dimension)'
+    Error:Error:line (169)Cannot resolve method 'info(java.lang.String, int, int, int, int, int, int)'
+    Warning:Warning:line (218)'StringBuilder' can be replaced with 'String'
+D:\Documents\GitHub\whs\src\main\java\minesweeper\Reset.java
+    Error:Error:line (11)Cannot resolve symbol 'logging'
+    Error:Error:line (22)Cannot resolve symbol 'Logger'
+    Error:Error:line (24)Cannot resolve symbol 'Logger'
+    Error:Error:line (24)Cannot resolve symbol 'LogManager'
+    Error:Error:line (27)Cannot resolve method 'info(minesweeper.Reset)'
+D:\Documents\GitHub\whs\src\main\java\minesweeper\Stopwatch.java
+    Error:Error:line (10)Cannot resolve symbol 'logging'
+    Error:Error:line (21)Cannot resolve symbol 'Logger'
+    Error:Error:line (23)Cannot resolve symbol 'Logger'
+    Error:Error:line (23)Cannot resolve symbol 'LogManager'
+    Warning:Warning:line (28)Access can be package-private
+    Error:Error:line (29)Cannot resolve method 'info(minesweeper.Stopwatch)'
+    Warning:Warning:line (33)Access can be package-private
+    Warning:Warning:line (52)Access can be package-private
+    Warning:Warning:line (56)Access can be package-private
+D:\Documents\GitHub\whs\src\main\java\minesweeper\Images.java
+    Error:Error:line (14)Cannot resolve symbol 'logging'
+    Warning:Warning:line (50)Modifier 'private' is redundant for enum constructors
+    Error:Error:line (83)Cannot resolve symbol 'Logger'
+    Error:Error:line (83)Cannot resolve symbol 'LogManager'
+    Error:Error:line (89)Cannot resolve method 'error(java.lang.String, java.lang.Class<minesweeper.Images>, java.io.IOException)'
+    Error:Error:line (92)Cannot resolve method 'info(java.lang.String, java.lang.Class<minesweeper.Images>, java.lang.String, int, int)'
+D:\Documents\GitHub\whs\src\main\java\minesweeper\Main.java
+    Error:Error:line (16)Cannot resolve symbol 'logging'
+    Error:Error:line (30)Cannot resolve symbol 'Logger'
+    Error:Error:line (32)Cannot resolve symbol 'Logger'
+    Error:Error:line (32)Cannot resolve symbol 'LogManager'
+    Warning:Warning:line (75)Access can be private
+    Error:Error:line (80)Cannot resolve method 'info(java.lang.String, java.lang.String, java.lang.String, int, int, int)'
+    Error:Error:line (101)Cannot resolve method 'info(java.lang.String, java.awt.event.ComponentEvent, java.lang.String, int, int, int, int, double, double, double, double)'
+    Warning:Warning:line (117)Access can be package-private
+    Warning:Warning:line (137)Variable 'c' initializer 'new GridBagConstraints()' is redundant
+    Warning:Warning:line (141)Should be one of: Font.PLAIN, Font.BOLD, Font.ITALIC or their combination
+    Warning:Warning:line (172)Should be one of: Font.PLAIN, Font.BOLD, Font.ITALIC or their combination
+    Warning:Warning:line (214)Access can be package-private
+    Warning:Warning:line (218)Anonymous new ActionListener() can be replaced with lambda
+    Warning:Warning:line (233)Anonymous new Runnable() can be replaced with method reference
+    Warning:Warning:line (233)Anonymous new Runnable() can be replaced with lambda
+D:\Documents\GitHub\whs\src\main\java\minesweeper\RandPlace.java
+    Warning:Warning:line (20)Access can be package-private
+    Warning:Warning:line (36)Access can be private
+    Warning:Warning:line (38)'for' loop replaceable with 'foreach'
+    Warning:Warning:line (48)'for' loop replaceable with 'foreach'
+    Warning:Warning:line (63)Access can be private
+    Warning:Warning:line (76)'validArr[j] == false' can be simplified to '!validArr[j]'
+    Warning:Warning:line (106)Manual array copy
+    Warning:Warning:line (119)Access can be package-private
+    Warning:Warning:line (124)Manual array copy
