@@ -89,14 +89,13 @@ public class Minesweeper {
      * Has the state of the game changed yet?
      */
     public void winCondition() {
-        // if (numberFlags >= flagsNecessary) {
-        //      stateOfGame = gameState.OVER_WON;
-        //}
-        //else if () { /* I've mentioned bombs plenty now */
-            //stateOfGame = gameState.OVER_LOST;
-        //}
-        if (stateOfGame.equals(gameState.OVER_LOST)) {
-            //yeah
-        }
+        for (int i = 0; i < gameArray.length; i++)
+            for (int k = 0; k < gameArray[0].length; k++)   {
+                if (gameArray[i][k].getIsClicked() && gameArray[i][k].getIsMine())
+                    stateOfGame = gameState.OVER_LOST;
+                if (gameArray[i][k].getIsClicked() && !(gameArray[i][k].getIsMine()))
+                    stateOfGame = gameState.OVER_WON;   }
+         
+     
     }
 }
