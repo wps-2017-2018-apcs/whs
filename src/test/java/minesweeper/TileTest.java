@@ -19,17 +19,19 @@ public class TileTest {
     @Before
     public void setUp() {
     }
+
     /**
      * Tear down after every test.
      */
     @After
     public void tearDown() {
     }
+
     /**
      * Rigorous Test :-)
      */
     @Test
     public void testApp() {
-        Assert.assertTrue( true );
+        Assert.assertTrue(true);
     }
 }

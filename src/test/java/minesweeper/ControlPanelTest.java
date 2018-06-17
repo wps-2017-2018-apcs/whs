@@ -19,17 +19,19 @@ public class ControlPanelTest {
     @Before
     public void setUp() {
     }
+
     /**
      * Tear down after every test.
      */
     @After
     public void tearDown() {
     }
+
     /**
      * Rigourous Test :-)
      */
     @Test
     public void testApp() {
-        Assert.assertTrue( true );
+        Assert.assertTrue(true);
     }
 }

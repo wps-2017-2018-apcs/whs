@@ -17,52 +17,52 @@ import org.apache.logging.log4j.*;
  * @author David C. Petty // https://github.com/wps-dpetty
  */
 public class Stopwatch {// Just a note, Stopwatch is traditionally started after the first click
-	/**
-	 * log4j {@link Logger}.
-	 */
-	private static Logger logger = LogManager.getLogger(Minesweeper.SHORT);
+    /**
+     * log4j {@link Logger}.
+     */
+    private static Logger logger = LogManager.getLogger(Minesweeper.SHORT);
 
-	private boolean isRunning;
-	private long startTime;
+    private boolean isRunning;
+    private long startTime;
 
-	public Stopwatch() {
-		logger.info(this);
-		isRunning = false;
-	}
+    public Stopwatch() {
+        logger.info(this);
+        isRunning = false;
+    }
 
-	public void startStopWatch() {
-		isRunning = true;
-		startTime = System.currentTimeMillis();
-	}
+    public void startStopWatch() {
+        isRunning = true;
+        startTime = System.currentTimeMillis();
+    }
 
-	public void stopStopWatch() {
-		isRunning = false;
-		startTime = System.currentTimeMillis();
-	}
+    public void stopStopWatch() {
+        isRunning = false;
+        startTime = System.currentTimeMillis();
+    }
 
-	public double getElapsedTime() {
-		long result = 0;
-		if (isRunning) {
-			result = System.currentTimeMillis() - startTime;
-		}
+    public double getElapsedTime() {
+        long result = 0;
+        if (isRunning) {
+            result = System.currentTimeMillis() - startTime;
+        }
 
-		return result / 1000.0;
-	}
+        return result / 1000.0;
+    }
 
-	public boolean isStopWatchRunning() {
-		return isRunning;
-	}
+    public boolean isStopWatchRunning() {
+        return isRunning;
+    }
 
-	public String getFormattedElapsedTime() {
-		String result = "00:00";
-		if (isRunning) {
-			double elapsedTime = System.currentTimeMillis() - startTime;
-			int seconds = (int) (elapsedTime / 1000.0);
-			int minutes = seconds / 60;
-			seconds -= minutes * 60;
-			//result = minutes + ":" + seconds;
-			result = String.format("%02d:%02d", minutes, seconds);
-		}
-		return result;
-	}
+    public String getFormattedElapsedTime() {
+        String result = "00:00";
+        if (isRunning) {
+            double elapsedTime = System.currentTimeMillis() - startTime;
+            int seconds = (int) (elapsedTime / 1000.0);
+            int minutes = seconds / 60;
+            seconds -= minutes * 60;
+            //result = minutes + ":" + seconds;
+            result = String.format("%02d:%02d", minutes, seconds);
+        }
+        return result;
+    }
 }
