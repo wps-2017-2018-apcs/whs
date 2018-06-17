@@ -75,7 +75,7 @@ public class Grid extends JPanel {
     }
 
     /**
-     * Create {@link Grid} of square {@link Button}s with {@link MINIMUM_SIDE}
+     * Create {@link Grid} of square {@link Button}s with {@link #MINIMUM_SIDE}
      * size of square buttons.
      *
      * @param rows number of rows in grid
@@ -86,9 +86,9 @@ public class Grid extends JPanel {
     }
 
     /**
-     * Create {@link Grid} of square {@link Button}s with {@link DEFAULT_ROWS}
-     * number of rows, {@link DEFAULT_COLS} number of columns, and
-     * {@link MINIMUM_SIDE} size of square buttons.
+     * Create {@link Grid} of square {@link Button}s with {@link #DEFAULT_ROWS}
+     * number of rows, {@link #DEFAULT_COLS} number of columns, and
+     * {@link #MINIMUM_SIDE} size of square buttons.
      */
     public Grid() {
         this(DEFAULT_ROWS, DEFAULT_COLS);
