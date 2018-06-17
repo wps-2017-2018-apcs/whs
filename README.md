@@ -13,8 +13,9 @@ Minesweeper Rules:
     7. Clicking a blank space uncovers all surrounding blank spaces (stop at first number)
     8. The button at the top will change to X-eyed emoji if player lost, from a smiley faced emoji
     9. Pressing the button at the top will reset the board and re-randomize placement of mines
-    10. Stopwatch at the top will start after the first click and only stops when the player has either won or lost the game
-    11. Left click will uncover a tile
-    12. Right click will flag a tile (meant only for bombs)
+    10. Stopwatch at the top will start after the first click 
+    11. The Stopwatch only stops when the player has either won or lost the game
+    12. Left click will uncover a tile
+    13. Right click will flag a tile (meant only for bombs)
     
     
