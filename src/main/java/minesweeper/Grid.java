@@ -124,12 +124,12 @@ public class Grid extends JPanel {
     }
 
     /**
-     * Return {@link Button} at column row <tt>row</tt> and <tt>col</tt>.
+     * Return {@link Button} at column row <code>row</code> and <code>col</code>.
      *
      * @param row row of {@link Button} to find
      * @param col column of {@link Button} to find
-     * @return {@link Button} at column <tt>col</tt> and row <tt>row</tt>,
-     * or null if no button matches "<tt>col</tt>,<tt>row</tt>"
+     * @return {@link Button} at row <code>row</code> and column <code>col</code>,
+     * or null if no button matches "<code>row</code>,<code>col</code>"
      */
     public Button findButton(int row, int col) {
         Component[] components = getComponents();
@@ -155,8 +155,8 @@ public class Grid extends JPanel {
     }
 
     /**
-     * Resizes this component so that it has width <tt>width</tt> and
-     * height <tt>height</tt>. This method changes layout-related
+     * Resizes this component so that it has width <code>width</code> and
+     * height <code>height</code>. This method changes layout-related
      * information, and therefore, invalidates the component hierarchy.
      *
      * @param width  new width of this component in pixels
@@ -179,8 +179,8 @@ public class Grid extends JPanel {
     }
 
     /**
-     * Resizes this component so that it has width <tt>size.width</tt> and
-     * height <tt>size.height</tt>. This method changes layout-related
+     * Resizes this component so that it has width <code>size.width</code> and
+     * height <code>size.height</code>. This method changes layout-related
      * information, and therefore, invalidates the component hierarchy.
      *
      * @param size dimension specifying the new size of this component
@@ -209,9 +209,9 @@ public class Grid extends JPanel {
 */
 
     /**
-     * Return {@link String} representation of <tt>this</tt>.
+     * Return {@link String} representation of <code>this</code>.
      *
-     * @return {@link String} representation of <tt>this</tt>
+     * @return {@link String} representation of <code>this</code>
      */
     @Override
     public String toString() {

@@ -95,8 +95,8 @@ public class Button extends JButton implements ActionListener {
     }
 
     /**
-     * Resizes this component so that it has width <tt>width</tt> and
-     * height <tt>height</tt>. This method changes layout-related
+     * Resizes this component so that it has width <code>width</code> and
+     * height <code>height</code>. This method changes layout-related
      * information, and therefore, invalidates the component hierarchy.
      *
      * @param width  new width of this component in pixels
@@ -113,8 +113,8 @@ public class Button extends JButton implements ActionListener {
     }
 
     /**
-     * Resizes this component so that it has width <tt>size.width</tt> and
-     * height <tt>size.height</tt>. This method changes layout-related
+     * Resizes this component so that it has width <code>size.width</code> and
+     * height <code>size.height</code>. This method changes layout-related
      * information, and therefore, invalidates the component hierarchy.
      *
      * @param size dimension specifying the new size of this component
@@ -127,9 +127,9 @@ public class Button extends JButton implements ActionListener {
     }
 
     /**
-     * Return {@link String} representation of <tt>this</tt>.
+     * Return {@link String} representation of <code>this</code>.
      *
-     * @return {@link String} representation of <tt>this</tt>
+     * @return {@link String} representation of <code>this</code>
      */
     @Override
     public String toString() {
@@ -142,7 +142,7 @@ public class Button extends JButton implements ActionListener {
 
     /**
      * {@link JButton#setActionCommand(java.lang.String)
-     * setActionCommand}("<tt>row</tt>,<tt>col</tt>").
+     * setActionCommand}("<code>row</code>,<code>col</code>").
      *
      * @param row row of this {@link Button}
      * @param col column of this {@link Button}
@@ -152,11 +152,11 @@ public class Button extends JButton implements ActionListener {
     }
 
     /**
-     * Return (<tt>row</tt>,<tt>col</tt>) {@link Point} parsed from
-     * <tt>actionCommand</tt>.
+     * Return (<code>row</code>,<code>col</code>) {@link Point} parsed from
+     * <code>actionCommand</code>.
      *
-     * @param actionCommand "<tt>row</tt>,<tt>col</tt>" {@link String}
-     * @return (< tt > row < / tt >, < tt > col < / tt >) {@link Point}
+     * @param actionCommand "<code>row</code>,<code>col</code>" {@link String}
+     * @return (<code>row</code>, <code>col</code>) {@link Point}
      */
     public static Point parseActionCommand(String actionCommand) {
         int comma = actionCommand.indexOf(",");
