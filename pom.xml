@@ -38,13 +38,13 @@
             </manifest>
           </archive>
         </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>test-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -54,6 +54,23 @@
           <show>private</show>
           <linksource>true</linksource>
           <nohelp>true</nohelp>
+          <tags>
+            <tag>
+              <name>pre</name>
+              <placement>m</placement>
+              <head>Precondition:</head>
+            </tag>
+            <tag>
+              <name>post</name>
+              <placement>m</placement>
+              <head>Postcondition:</head>
+            </tag>
+            <tag>
+              <name>todo</name>
+              <placement>a</placement>
+              <head>To Do:</head>
+            </tag>
+          </tags>
           <doclint>all</doclint> <!-- 'none' to disable doclint -->
         </configuration>
 <!--        <executions>
@@ -80,12 +97,12 @@
         </executions>
       </plugin>
       <plugin>
+        <!-- TODO: this is out of date. This plugin is up to 3.7.1 -->
         <groupId>com.github.github</groupId>
         <artifactId>site-maven-plugin</artifactId>
         <version>0.9</version>
         <configuration>
           <message>Creating site for ${project.version}</message>
-
         </configuration>
         <executions>
           <execution>
@@ -173,6 +190,12 @@
     <artifactId>commons-logging</artifactId>
     <version>1.2</version>
   </dependency>
+  <!-- https://mvnrepository.com/artifact/net.sourceforge.taglets/taglets --> <!--
+  <dependency>
+    <groupId>net.sourceforge.taglets</groupId>
+    <artifactId>taglets</artifactId>
+    <version>2.0.3</version>
+  </dependency> -->
   <!-- https://odoepner.wordpress.com/2013/07/19/play-mp3-or-ogg-using-javax-sound-sampled-mp3spi-vorbisspi/ -->
   <dependency>
     <groupId>com.googlecode.soundlibs</groupId>
