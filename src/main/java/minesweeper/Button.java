@@ -90,7 +90,7 @@ public class Button extends JButton implements ActionListener {
         Images[] images = {Images.COVER, Images.MINE, Images.FLAG,
                 Images.NUMBER1, Images.NUMBER2, Images.NUMBER3, Images.NUMBER4,
                 Images.NUMBER5, Images.NUMBER6, Images.NUMBER7, Images.NUMBER8,};
-        Images image = images[(int) (Math.random() * images.length)];
+        Images image = images[0];
         g.drawImage(image.image(), 0, 0, getWidth(), getHeight(), null);
     }
 
