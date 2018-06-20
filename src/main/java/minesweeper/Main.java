@@ -224,6 +224,35 @@ public class Main extends JFrame {
         }
     }
 
+    public  static void youDied() {
+        Main frame = new Main("Minesweeper", 16, 30, 99);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Use single JPanel in frame to get full width & height.
+        panel = new JPanel();
+        panel.addComponentListener(new PanelListener());
+
+        // Initialize panel layout.
+        GridBagLayout layout = new GridBagLayout();
+        panel.setLayout(layout);
+        GridBagConstraints c = new GridBagConstraints();
+        // Display dead emoticon.
+        Image image = Images.getImage("/images/youLost1.jpeg");
+        ImageIcon icon = new ImageIcon(image);
+        Dimension size = new Dimension(icon.getIconWidth(), icon.getIconHeight());
+        JButton smile = new JButton(icon);
+        smile.setPreferredSize(size);
+        c = new GridBagConstraints();
+        c.anchor = GridBagConstraints.PAGE_START;
+        c.anchor = GridBagConstraints.CENTER;
+        c.fill = GridBagConstraints.NONE;
+        c.gridx = 1;
+        c.gridy = 0;
+        c.ipadx = 10;
+        c.weightx = 0.5;
+        panel.add(smile, c);
+    }
+
     /**
      * Minesweeper main method.
      *

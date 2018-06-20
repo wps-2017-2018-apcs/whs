@@ -75,7 +75,22 @@ public class Button extends JButton implements ActionListener {
         // RED_FLAG: simply something to do when the mouse is clicked
         Button button = Main.getGrid().findButton(point.x, point.y);
         if (button != null) // RED_FLAG: what to do if button not found?
-            button.setBackground(Color.RED);
+        {
+            //button.setBackground(Color.RED);
+            Images[] images = {Images.COVER, Images.MINE, Images.FLAG,
+                    Images.NUMBER1, Images.NUMBER2, Images.NUMBER3, Images.NUMBER4,
+                    Images.NUMBER5, Images.NUMBER6, Images.NUMBER7, Images.NUMBER8,};
+            Images image = images[0];
+            if (Minesweeper.getGameArray()[row][col].getIsMine())
+            {
+                image = images[2];
+                Main.youDied();
+            }
+            else if (Minesweeper.getGameArray()[row][col].getTileValue() == 0) {}
+                // to do
+            else
+                image = images[Minesweeper.getGameArray()[row][col].getTileValue() + 2];
+        }
     }
 
     /**
