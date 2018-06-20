@@ -98,4 +98,8 @@ public class Tile extends JButton implements ActionListener {
     public void incrementTile() {
         tileValue++;
     }
+
+    public String toString() {
+        return "Tile: mine=" + isMine + ", value=" + tileValue;
+    }
 }

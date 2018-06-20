@@ -12,6 +12,7 @@ import java.awt.event.*;
 import javax.swing.*;
 //import java.util.*;
 import org.apache.logging.log4j.*;
+import java.util.Arrays;
 
 /**
  * {@link Button} is a {@link JButton} for spaces / flags / bombs.
@@ -81,6 +82,7 @@ public class Button extends JButton implements ActionListener {
                     Images.NUMBER1, Images.NUMBER2, Images.NUMBER3, Images.NUMBER4,
                     Images.NUMBER5, Images.NUMBER6, Images.NUMBER7, Images.NUMBER8,};
             Images image = images[0];
+            System.out.print(Arrays.deepToString(Minesweeper.getGameArray()));
             if (Minesweeper.getGameArray()[row][col].getIsMine())
             {
                 image = images[2];

@@ -57,7 +57,7 @@ public class Minesweeper {
 
     public static Tile[][] getMines() {
         boolean[][] bombSpots = (new RandPlace(16, 30, 99)).generate2D();
-        Tile[][] tileArray = new Tile[0][0];
+        Tile[][] tileArray = new Tile[16][30];
         for (int i = 0; i < 16; i++)
             for (int k = 0; k < 30; k++) {
                 tileArray[i][k] = new Tile(i, k, bombSpots[i][k]);
