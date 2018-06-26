@@ -97,17 +97,12 @@
         </executions>
       </plugin>
       <plugin>
+        <!-- TODO: this is out of date. This plugin is up to 3.7.1 -->
         <groupId>com.github.github</groupId>
         <artifactId>site-maven-plugin</artifactId>
-        <version>0.12</version>
+        <version>0.9</version>
         <configuration>
           <message>Creating site for ${project.version}</message>
-          <url>https://github.com/wps-2017-2018-apcs/whs</url>
-          <repositoryName>whs</repositoryName>
-          <repositoryOwner>wps-2017-2018-apcs</repositoryOwner>
-          <branch>refs/heads/master</branch>
-          <path>docs/site</path>
-          <merge>true</merge>
         </configuration>
         <executions>
           <execution>
@@ -159,29 +154,6 @@
     </plugins>
   </build>
 
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.9</version>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>dependencies</report>
-              <report>project-team</report>
-              <report>mailing-list</report>
-              <report>cim</report>
-              <report>issue-tracking</report>
-              <report>license</report>
-              <report>scm</report>
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-    </plugins>
-  </reporting>
-
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -213,11 +185,11 @@
     <version>2.11.0</version>
   </dependency>
   <!-- RED_FLAG: does this mask downloading of other log4j .JAR files? -->
-<!--  <dependency>
+  <dependency>
     <groupId>commons-logging</groupId>
     <artifactId>commons-logging</artifactId>
     <version>1.2</version>
-  </dependency> -->
+  </dependency>
   <!-- https://mvnrepository.com/artifact/net.sourceforge.taglets/taglets --> <!--
   <dependency>
     <groupId>net.sourceforge.taglets</groupId>
