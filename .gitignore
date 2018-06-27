@@ -20,24 +20,37 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# IDE files
+# IDE files #
+#############
 *.bluej
 *.drjava
 *.gpj
 *.ipr
 *.iml
+*.eml
+*.userlibraries
 .project
 .classpath
 
-# IDE directories
+# IDE directories #
+###################
 .idea/
 .settings/
 bin/
 
-# Target build directory
+# User directories #
+####################
+.git/
+.m2/
+.gradle/
+
+# Target build directories #
+############################
 target/
+build/
 
 # Package Files #
+#################
 *.jar
 *.war
 *.nar
@@ -88,5 +101,3 @@ hs_err_pid*
 .Trashes
 ehthumbs.db
 Thumbs.db
-/.gradle/
-/build/
