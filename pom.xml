@@ -4,7 +4,7 @@
   <groupId>minesweeper</groupId>
   <artifactId>minesweeper</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
   <name>minesweeper</name>
   <url>http://maven.apache.org</url>
 
@@ -168,13 +168,16 @@
         <reportSets>
           <reportSet>
             <reports>
-              <report>dependencies</report>
-              <report>project-team</report>
-              <report>mailing-list</report>
               <report>cim</report>
+              <report>dependencies</report>
               <report>issue-tracking</report>
+              <report>help</report>
+              <report>index</report>
               <report>license</report>
+              <report>mailing-list</report>
+              <report>project-team</report>
               <report>scm</report>
+              <report>summary</report>
             </reports>
           </reportSet>
         </reportSets>
@@ -202,15 +205,16 @@
       <version>1.4</version>
     </dependency>
     <!-- https://logging.apache.org/log4j/2.x/maven-artifacts.html -->
+    <!-- Why 2.9.1? https://goo.gl/Ur2TfZ -->
   <dependency>
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-api</artifactId>
-    <version>2.11.0</version>
+    <version>2.9.1</version>
   </dependency>
   <dependency>
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-core</artifactId>
-    <version>2.11.0</version>
+    <version>2.9.1</version>
   </dependency>
   <!-- RED_FLAG: does this mask downloading of other log4j .JAR files? -->
 <!--  <dependency>
@@ -245,19 +249,19 @@
   <dependency>
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-api</artifactId>
-    <version>2.8.1</version>
+    <version>2.9.1</version>
     <scope>runtime</scope>
   </dependency>        
   <dependency>
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-core</artifactId>
-    <version>2.8.1</version>
+    <version>2.9.1</version>
     <scope>runtime</scope>
   </dependency>
   <dependency>
     <groupId>org.apache.logging.log4j</groupId>
     <artifactId>log4j-jcl</artifactId>
-    <version>2.0</version>
+    <version>2.9.1</version>
     <scope>runtime</scope>
   </dependency>
 -->
@@ -268,7 +272,7 @@
       <dependency>
         <groupId>org.apache.logging.log4j</groupId>
         <artifactId>log4j-bom</artifactId>
-        <version>2.8.2</version>
+        <version>2.9.1</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
