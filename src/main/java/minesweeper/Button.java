@@ -99,6 +99,7 @@ public class Button extends JButton implements ActionListener {
      * Paint the component using a {@link Graphics} rendering object.
      *
      * @param g the Graphics rendering object
+     * @to.do fix image repainting
      */
     @Override
     public void paintComponent(Graphics g) {
