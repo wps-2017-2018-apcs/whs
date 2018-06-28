@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="Minesweeper">
+  <bannerLeft>
+    <name>Minesweeper</name>
+    <title>Minesweeper</title>
+    <alt>Minesweeper</alt>
+    <src>images/smiley1.jpeg</src>
+    <href>https://wps-2017-2018-apcs.github.io/whs/</href>
+  </bannerLeft>
+  <bannerRight>
+    <src>images/whs-logo-80x80.png</src>
+  </bannerRight>
+  <body>
+    <links>
+      <item name="Winchester High School" href="http://www.winchesterps.org/schools/winchester_high_school/" />
+      <item name="APCS" href="https://sites.google.com/winchesterps.org/dpetty/apcs" />
+      <item name="2017-2018" href="https://github.com/orgs/wps-2017-2018-apcs/" />
+    </links>
+    <!-- Do not include the left menu. Use the Jekyll site instead. -->
+<!--    <menu name="Maven 2.0">
+      <item name="Introduction" href="index.html"/>
+      <item name="Download" href="download.html"/>
+      <item name="Release Notes" href="release-notes.html" />
+      <item name="General Information" href="about.html"/>
+      <item name="Road Map" href="roadmap.html" />
+    </menu>
+-->
+    <menu ref="reports"/>
+  </body>
+</project>
