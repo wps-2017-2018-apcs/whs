@@ -56,17 +56,17 @@
           <nohelp>true</nohelp>
           <tags>
             <tag>
-              <name>pre</name>
+              <name>pre.cond</name>
               <placement>m</placement>
               <head>Precondition:</head>
             </tag>
             <tag>
-              <name>post</name>
+              <name>post.cond</name>
               <placement>m</placement>
               <head>Postcondition:</head>
             </tag>
             <tag>
-              <name>todo</name>
+              <name>to.do</name>
               <placement>a</placement>
               <head>To Do:</head>
             </tag>
@@ -95,6 +95,18 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.7.1</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.doxia</groupId>
+            <artifactId>doxia-module-markdown</artifactId>
+            <version>1.8</version>
+          </dependency>
+        </dependencies>
       </plugin>
       <plugin>
         <groupId>com.github.github</groupId>
@@ -171,7 +183,6 @@
               <report>cim</report>
               <report>dependencies</report>
               <report>issue-tracking</report>
-              <report>help</report>
               <report>index</report>
               <report>license</report>
               <report>mailing-list</report>
@@ -206,77 +217,33 @@
     </dependency>
     <!-- https://logging.apache.org/log4j/2.x/maven-artifacts.html -->
     <!-- Why 2.9.1? https://goo.gl/Ur2TfZ -->
-  <dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-api</artifactId>
-    <version>2.9.1</version>
-  </dependency>
-  <dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-core</artifactId>
-    <version>2.9.1</version>
-  </dependency>
-  <!-- RED_FLAG: does this mask downloading of other log4j .JAR files? -->
-<!--  <dependency>
-    <groupId>commons-logging</groupId>
-    <artifactId>commons-logging</artifactId>
-    <version>1.2</version>
-  </dependency> -->
-  <!-- https://mvnrepository.com/artifact/net.sourceforge.taglets/taglets --> <!--
-  <dependency>
-    <groupId>net.sourceforge.taglets</groupId>
-    <artifactId>taglets</artifactId>
-    <version>2.0.3</version>
-  </dependency> -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.9.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>2.9.1</version>
+    </dependency>
   <!-- https://odoepner.wordpress.com/2013/07/19/play-mp3-or-ogg-using-javax-sound-sampled-mp3spi-vorbisspi/ -->
-  <dependency>
-    <groupId>com.googlecode.soundlibs</groupId>
-    <artifactId>tritonus-share</artifactId>
-    <version>0.3.7.4</version>
-  </dependency>
-  <dependency>
-    <groupId>com.googlecode.soundlibs</groupId>
-    <artifactId>mp3spi</artifactId>
-    <version>1.9.5.4</version>
-  </dependency>
-  <dependency>
-    <groupId>com.googlecode.soundlibs</groupId>
-    <artifactId>vorbisspi</artifactId>
-    <version>1.0.3.3</version>
-  </dependency>
-  <!-- Scope: runtime -->
-<!-- 
-  <dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-api</artifactId>
-    <version>2.9.1</version>
-    <scope>runtime</scope>
-  </dependency>        
-  <dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-core</artifactId>
-    <version>2.9.1</version>
-    <scope>runtime</scope>
-  </dependency>
-  <dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-jcl</artifactId>
-    <version>2.9.1</version>
-    <scope>runtime</scope>
-  </dependency>
--->
+    <dependency>
+      <groupId>com.googlecode.soundlibs</groupId>
+      <artifactId>tritonus-share</artifactId>
+      <version>0.3.7.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.googlecode.soundlibs</groupId>
+      <artifactId>mp3spi</artifactId>
+      <version>1.9.5.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.googlecode.soundlibs</groupId>
+      <artifactId>vorbisspi</artifactId>
+      <version>1.0.3.3</version>
+    </dependency>
+    <!-- Scope: runtime -->
+    <!-- NONE -->
   </dependencies>
-<!--
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-bom</artifactId>
-        <version>2.9.1</version>
-        <scope>import</scope>
-        <type>pom</type>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
--->
 </project>
