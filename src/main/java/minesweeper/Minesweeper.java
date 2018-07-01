@@ -56,11 +56,11 @@ public class Minesweeper {
     }
 
     public static Tile[][] getMines() {
-        boolean[][] bombSpots = (new RandPlace(16, 30, 99)).generate2D();
+        boolean[][] mineSpots = (new RandPlace(16, 30, 99)).generate2D();
         Tile[][] tileArray = new Tile[16][30];
         for (int i = 0; i < 16; i++)
             for (int k = 0; k < 30; k++) {
-                tileArray[i][k] = new Tile(i, k, bombSpots[i][k]);
+                tileArray[i][k] = new Tile(i, k, mineSpots[i][k]);
 
             }
         for (Tile[] rows : tileArray) {
@@ -80,8 +80,8 @@ public class Minesweeper {
     public void tileHandled(Tile other) {
 /*
         Tile.State handling = other.getState();
-        if (Tile.State.BOMB.equals(handling)) {
-            //TODO: handle bomb-hit
+        if (Tile.State.MINE.equals(handling)) {
+            //TODO: handle mine-hit
         }
         else if (Tile.State.FLAG.equals(handling)) {
             addFlag();

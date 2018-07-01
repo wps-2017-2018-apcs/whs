@@ -15,7 +15,7 @@ import org.apache.logging.log4j.*;
 import java.util.Arrays;
 
 /**
- * {@link Button} is a {@link JButton} for spaces / flags / bombs.
+ * {@link Button} is a {@link JButton} for spaces / flags / mines.
  *
  * @author 2017-2018 APCS
  * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE

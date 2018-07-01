@@ -62,12 +62,12 @@ public class Tile extends JButton implements ActionListener {
      *
      * @return the value on the tile
      */
-    public int getTileValue() { //for now, if it's 0, no bombs around, do NOT display 0- display a blank tile.
+    public int getTileValue() { //for now, if it's 0, no mines around, do NOT display 0- display a blank tile.
         return tileValue;
     }
 
     /**
-     * Allows Main (or wherever the board is initialized) to modify the value based on nearby bombs
+     * Allows Main (or wherever the board is initialized) to modify the value based on nearby mines
      *
      * @param a = the value to which tileValue will be set
      */
@@ -76,7 +76,7 @@ public class Tile extends JButton implements ActionListener {
     }
 
     /**
-     * Allows getMines() class in Minesweeper to assign correct tile value after all the bombs are created
+     * Allows getMines() class in Minesweeper to assign correct tile value after all the mines are created
      * to all the non-mine tiles
      */
     public void setTileValue() {

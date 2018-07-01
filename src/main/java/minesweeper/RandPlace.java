@@ -1,7 +1,7 @@
 package minesweeper;
 
 /**
- * RandPlace- looks convoluted; is solely for deciding where bombs are- randomly placing them, if you will
+ * RandPlace- looks convoluted; is solely for deciding where mines are- randomly placing them, if you will
  *
  * @author Kevin Khaghani // 1907024@wpsstudent.com
  */
