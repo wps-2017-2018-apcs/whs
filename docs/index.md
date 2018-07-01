@@ -8,5 +8,6 @@ layout: default
 
 # Additional documenation
 
+| [Notes](notes.html) | The additional notes for the Minesweeper project. |
 | [Javadoc](site/apidocs/minesweeper/package-summary.html) | The [Javadoc](http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html) for the Minesweeper API. |
 | [Maven](site) | The [Maven](http://maven.apache.or/) project documentation. |
