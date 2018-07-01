@@ -4,15 +4,17 @@ These are notes collected during the final project period, mostly by e-mail:
 
 ---
 
-**On Thu, May 24, 2018 at 8:59 PM David C. Petty wrote:**
+**On Thu, May 24, 2018 at 8:59 PM [David C. Petty](https://github.com/wps-dpetty) wrote:**
 
 <https://help.github.com/articles/adding-organization-members-to-a-team/>
 
 Apparently, I need to invite you all to this organization: <https://github.com/organizations/wps-2017-2018-apcs/> so please let me know your id in class tomorrow.
 
+\- dcp
+
 ---
 
-**On Sun, Jun 3, 2018 at 9:51 AM David C. Petty wrote:**
+**On Sun, Jun 3, 2018 at 9:51 AM [David C. Petty](https://github.com/wps-dpetty) wrote:**
 
 - I have prepared a [document](https://docs.google.com/document/d/1fJs_t8NVRUpM7alH4vWlWnz8H07tWdg8WJkRdo4d3Ac/) to help you with the final two APCS assignments.
 - I have prepared a [document](https://docs.google.com/document/d/1xrqUS0VPWsAt0SaLzvyRNm3990nTPUp4WF4-4Tx2GaM/) to help with the final project on Github.
@@ -22,9 +24,11 @@ Apparently, I need to invite you all to this organization: <https://github.com/o
 
 Good luck. I will read any e-mail you send me, APCS-related or not. Have a great summer!
 
+\- dcp
+
 ---
 
-**On Mon, Jun 4, 2018 at 7:47 AM David C. Petty wrote:**
+**On Mon, Jun 4, 2018 at 7:47 AM [David C. Petty](https://github.com/wps-dpetty) wrote:**
 
 - Open a terminal window and `cd` to the project directory.
 - Type `git pull origin master`. Did you update?
@@ -36,13 +40,15 @@ Have fun!
 
 ---
 
-**On Mon, Jun 4, 2018 at 10:34 AM David C. Petty wrote:**
+**On Mon, Jun 4, 2018 at 10:34 AM [David C. Petty](https://github.com/wps-dpetty) wrote:**
 
 I don't know what project you are using. You need to use this project: <https://github.com/wps-2017-2018-apcs/whs>
 
+\- dcp
+
 ---
 
-**On Mon, Jun 4, 2018 at 11:00 AM David C. Petty wrote:**
+**On Mon, Jun 4, 2018 at 11:00 AM [David C. Petty](https://github.com/wps-dpetty) wrote:**
 
 OH! I hadn't enabled write permissions (*i.e.* `git push origin master`) for this organization / repository. I just did. Please let me know if you can now push committed changes.
 
@@ -52,7 +58,7 @@ p.s. Let me know when you are having issues like this. Are there any others?
 
 ---
 
-**On Tue, Jun 5, 2018 at 11:43 PM David C. Petty wrote:**
+**On Tue, Jun 5, 2018 at 11:43 PM [David C. Petty](https://github.com/wps-dpetty) wrote:**
 
 Hi everyone! It's great to see that people are able to push to the repository. Here are some observations.
 
@@ -86,7 +92,7 @@ If you haven't been editing code, simply use git pull origin master next time (a
 
 ---
 
-**On Mon, Jun 11, 2018 at 4:39 PM David C. Petty wrote:**
+**On Mon, Jun 11, 2018 at 4:39 PM [David C. Petty](https://github.com/wps-dpetty) wrote:**
 
 <https://github.com/wps-2017-2018-apcs/whs/graphs/contributors>
 
@@ -102,7 +108,7 @@ p.s. <http://nautil.us/issue/21/information/the-man-who-tried-to-redeem-the-worl
 
 ---
 
-**On Tue, Jun 12, 2018 at 1:41 AM David C. Petty wrote:**
+**On Tue, Jun 12, 2018 at 1:41 AM [David C. Petty](https://github.com/wps-dpetty) wrote:**
 
 Gotta `git pull origin master` this morning!
 
@@ -127,7 +133,7 @@ p.p.p.s. Some people could be working on the test cases in the `src/test/` direc
 
 ---
 
-**On Fri, Jun 15, 2018 at 8:18 AM David C. Petty wrote:**
+**On Fri, Jun 15, 2018 at 8:18 AM [David C. Petty](https://github.com/wps-dpetty) wrote:**
 
 Hi, all...
  
@@ -141,14 +147,14 @@ I changed `Button.java` to randomly show all 11 images. **THIS IS JUST TEST CODE
 
 ---
 
-**On Mon, Jun 18, 2018 at 8:51 AM, David C. Petty wrote:**
+**On Mon, Jun 18, 2018 at 8:51 AM, [David C. Petty](https://github.com/wps-dpetty) wrote:**
 
 p.s. `mvn javadoc:javadoc` was broken, but most of the errors were self-explanatory and are now fixed &mdash; including ones I introduced. The tags are listed here along with specific coding conventions: <http://www.oracle.com/technetwork/articles/java/index-137868.html>. I was able to add tags for `@pre.cond`, `@post.cond`, and `@to.do` to the POM.<br/>
 p.p.s. Good luck with your finals and finishing Minesweeper on Wednesday!
 
 ---
 
-**On Fri, Jun 22, 2018 at 12:12 PM, David C. Petty wrote:**:
+**On Fri, Jun 22, 2018 at 12:12 PM, [David C. Petty](https://github.com/wps-dpetty) wrote:**:
 
 Greetings everyone! It has been great to have you as students. Here are my final thoughts:
 * Aspen was kinda broken and I could not post grades. It is now fixed, so I have posted everything that I have. Your report cards will ship on Monday. Please let me know if you have any questions.
@@ -161,7 +167,7 @@ Anyway, have a great summer!
 
 ---
 
-**On Sun, Jul 01, 2018 at 11:47 AM, David C. Petty wrote:**:
+**On Sun, Jul 01, 2018 at 11:47 AM, [David C. Petty](https://github.com/wps-dpetty) wrote:**:
 
 Hi, all... I have been experimenting w/ Github and trying to learn its documentation options. One goal was to have the Javadoc be available to the public, as well as any documents written in `src/`. Here is what I have found:
 * <https://wps-2017-2018-apcs.github.io/whs/> is the URI for what they call `github-pages`. There are several ways to configure it, but I have configured it as (a) in the `master` branch and (b) in the `docs/` directory. The `docs/` directory is further configured as a <https://jekyllrb.com/> website, which Github supports serving. Furthermore, this is a repository-specific site just for `whs`.
