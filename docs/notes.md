@@ -2,11 +2,15 @@
 
 These are notes collected during the final project period, mostly by e-mail:
 
+---
+
 **On Thu, May 24, 2018 at 8:59 PM David C. Petty wrote:**
 
 <https://help.github.com/articles/adding-organization-members-to-a-team/>
 
 Apparently, I need to invite you all to this organization: <https://github.com/organizations/wps-2017-2018-apcs/> so please let me know your id in class tomorrow.
+
+---
 
 **On Sun, Jun 3, 2018 at 9:51 AM David C. Petty wrote:**
 
@@ -18,6 +22,8 @@ Apparently, I need to invite you all to this organization: <https://github.com/o
 
 Good luck. I will read any e-mail you send me, APCS-related or not. Have a great summer!
 
+---
+
 **On Mon, Jun 4, 2018 at 7:47 AM David C. Petty wrote:**
 
 - Open a terminal window and `cd` to the project directory.
@@ -28,9 +34,13 @@ Have fun!
  
 \- dcp
 
+---
+
 **On Mon, Jun 4, 2018 at 10:34 AM David C. Petty wrote:**
 
 I don't know what project you are using. You need to use this project: <https://github.com/wps-2017-2018-apcs/whs>
+
+---
 
 **On Mon, Jun 4, 2018 at 11:00 AM David C. Petty wrote:**
 
@@ -39,6 +49,8 @@ OH! I hadn't enabled write permissions (*i.e.* `git push origin master`) for thi
 \- dcp
 
 p.s. Let me know when you are having issues like this. Are there any others?
+
+---
 
 **On Tue, Jun 5, 2018 at 11:43 PM David C. Petty wrote:**
 
@@ -72,6 +84,8 @@ Note: fetch is like pull, but with no merges. reset --hard will set you to the c
 If you haven't been editing code, simply use git pull origin master next time (and every time) you plan to start editing code.
 ```
 
+---
+
 **On Mon, Jun 11, 2018 at 4:39 PM David C. Petty wrote:**
 
 <https://github.com/wps-2017-2018-apcs/whs/graphs/contributors>
@@ -85,6 +99,8 @@ I added <https://logging.apache.org/log4j/2.x/> logging to the project with the 
 \- dcp
 
 p.s. <http://nautil.us/issue/21/information/the-man-who-tried-to-redeem-the-world-with-logic> I got this from Tim Peters today... fascinating!
+
+---
 
 **On Tue, Jun 12, 2018 at 1:41 AM David C. Petty wrote:**
 
@@ -109,6 +125,8 @@ p.s. Don't forget to add your name to an `@author` tag if you have worked on a f
 p.p.s. Please write more comments.<br/>
 p.p.p.s. Some people could be working on the test cases in the `src/test/` directory.
 
+---
+
 **On Fri, Jun 15, 2018 at 8:18 AM David C. Petty wrote:**
 
 Hi, all...
@@ -121,10 +139,14 @@ I changed `Button.java` to randomly show all 11 images. **THIS IS JUST TEST CODE
  
 \- dcp
 
+---
+
 **On Mon, Jun 18, 2018 at 8:51 AM, David C. Petty wrote:**
 
 p.s. `mvn javadoc:javadoc` was broken, but most of the errors were self-explanatory and are now fixed &mdash; including ones I introduced. The tags are listed here along with specific coding conventions: <http://www.oracle.com/technetwork/articles/java/index-137868.html>. I was able to add tags for `@pre.cond`, `@post.cond`, and `@to.do` to the POM.<br/>
 p.p.s. Good luck with your finals and finishing Minesweeper on Wednesday!
+
+---
 
 **On Fri, Jun 22, 2018 at 12:12 PM, David C. Petty wrote:**:
 
@@ -136,6 +158,8 @@ Greetings everyone! It has been great to have you as students. Here are my final
 Anyway, have a great summer!
 
 \- dcp
+
+---
 
 **On Sun, Jul 01, 2018 at 11:47 AM, David C. Petty wrote:**:
 
