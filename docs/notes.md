@@ -90,7 +90,7 @@ If you haven't been editing code, simply use git pull origin master next time (a
 
 <https://github.com/wps-2017-2018-apcs/whs/graphs/contributors>
 
-Hey, guys & gals... few people seems to be pushing to the repository... it has been a week w/o much progress! Plus, I have almost pushed more commits than the rest of you combined. The best way to run a collaborative project is to collaborate. Push early and often. Share code and communicate. Just sayin'.
+Hey, guys & gals... few people seems to be pushing to the repository... it has been a week w/o much progress! Plus, I have almost pushed more commits than the rest of you combined. The best way to run a collaborative project is to [collaborate](https://dzone.com/articles/how-to-write-better-code). Push early and often. Share code and communicate. Just sayin'.
 
 I added <https://logging.apache.org/log4j/2.x/> logging to the project with the latest commits. `git pull origin master` to update. It's easy to use... every class has a logger. just use `logger.info("HERE IS SOME INTERESTING INFORMATION")` whenever you want. You can also do 'printf-style' logging using '{}' as a placeholder, *e.g.* `logger.info("{}: x = {}, y = {}", getClass(), x, y);` for variables `x` & `y`. I also added a default log message in each constructor of `logger.info(this);` so as to log something. Have fun!
  
