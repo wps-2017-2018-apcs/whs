@@ -64,11 +64,11 @@
 <span class="sourceLineNo">056</span>    }<a name="line.56"></a>
 <span class="sourceLineNo">057</span><a name="line.57"></a>
 <span class="sourceLineNo">058</span>    public static Tile[][] getMines() {<a name="line.58"></a>
-<span class="sourceLineNo">059</span>        boolean[][] bombSpots = (new RandPlace(16, 30, 99)).generate2D();<a name="line.59"></a>
+<span class="sourceLineNo">059</span>        boolean[][] mineSpots = (new RandPlace(16, 30, 99)).generate2D();<a name="line.59"></a>
 <span class="sourceLineNo">060</span>        Tile[][] tileArray = new Tile[16][30];<a name="line.60"></a>
 <span class="sourceLineNo">061</span>        for (int i = 0; i &lt; 16; i++)<a name="line.61"></a>
 <span class="sourceLineNo">062</span>            for (int k = 0; k &lt; 30; k++) {<a name="line.62"></a>
-<span class="sourceLineNo">063</span>                tileArray[i][k] = new Tile(i, k, bombSpots[i][k]);<a name="line.63"></a>
+<span class="sourceLineNo">063</span>                tileArray[i][k] = new Tile(i, k, mineSpots[i][k]);<a name="line.63"></a>
 <span class="sourceLineNo">064</span><a name="line.64"></a>
 <span class="sourceLineNo">065</span>            }<a name="line.65"></a>
 <span class="sourceLineNo">066</span>        for (Tile[] rows : tileArray) {<a name="line.66"></a>
@@ -88,8 +88,8 @@
 <span class="sourceLineNo">080</span>    public void tileHandled(Tile other) {<a name="line.80"></a>
 <span class="sourceLineNo">081</span>/*<a name="line.81"></a>
 <span class="sourceLineNo">082</span>        Tile.State handling = other.getState();<a name="line.82"></a>
-<span class="sourceLineNo">083</span>        if (Tile.State.BOMB.equals(handling)) {<a name="line.83"></a>
-<span class="sourceLineNo">084</span>            //TODO: handle bomb-hit<a name="line.84"></a>
+<span class="sourceLineNo">083</span>        if (Tile.State.MINE.equals(handling)) {<a name="line.83"></a>
+<span class="sourceLineNo">084</span>            //TODO: handle mine-hit<a name="line.84"></a>
 <span class="sourceLineNo">085</span>        }<a name="line.85"></a>
 <span class="sourceLineNo">086</span>        else if (Tile.State.FLAG.equals(handling)) {<a name="line.86"></a>
 <span class="sourceLineNo">087</span>            addFlag();<a name="line.87"></a>
