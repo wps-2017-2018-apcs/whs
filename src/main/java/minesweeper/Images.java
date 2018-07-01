@@ -4,49 +4,66 @@
 package minesweeper;
 
 import java.awt.*;
-//import java.awt.event.*;
 import java.awt.image.*;
 import java.io.*;
-//import java.nio.file.*;
 import javax.imageio.*;
-//import javax.swing.*;
-//import java.util.*;
 import org.apache.logging.log4j.*;
 
 /**
- * DESCRIBE {@link Images} HERE.
+ * {@link Images} is an <code>enum</code> that encodes 12 {@link Minesweeper}
+ * images.
  *
  * @author 2017-2018 APCS
- * @author ADD @author TAG FOR EVERYONE WHO CONTRIBUTED TO THIS FILE
- * @author David C. Petty // https://github.com/wps-dpetty
+ * @author <a href="https://github.com/wps-dpetty">David C. Petty</a>
  */
 public enum Images {
 
+    /** The enum associated with a covered square. */
     COVER("/images/minesweeper-cover.svg-600x600.png"),
+    /** The enum associated with a blank square. */
+    BLANK("/images/minesweeper-blank.svg-600x600.png"),
+    /** The enum associated with a flagged square. */
     FLAG("/images/minesweeper-flag.svg-600x600.png"),
+    /** The enum associated with a mined square. */
     MINE("/images/minesweeper-mine.svg-600x600.png"),
+    /** The enum associated with a square with 1 mine touching it. */
     NUMBER1("/images/1.svg-600x600.png"),
+    /** The enum associated with a square with 2 mines touching it. */
     NUMBER2("/images/2.svg-600x600.png"),
+    /** The enum associated with a square with 3 mines touching it. */
     NUMBER3("/images/3.svg-600x600.png"),
+    /** The enum associated with a square with 4 mines touching it. */
     NUMBER4("/images/4.svg-600x600.png"),
+    /** The enum associated with a square with 5 mines touching it. */
     NUMBER5("/images/5.svg-600x600.png"),
+    /** The enum associated with a square with 6 mines touching it. */
     NUMBER6("/images/6.svg-600x600.png"),
+    /** The enum associated with a square with 7 mines touching it. */
     NUMBER7("/images/7.svg-600x600.png"),
+    /** The enum associated with a square with 8 mines touching it. */
     NUMBER8("/images/8.svg-600x600.png");
 
     //////////////////////////////// FIELDS ////////////////////////////////
 
     /**
-     * The pathname for {@link BufferedImage} to be displayed.
+     * The pathname for {@link Image} to be displayed.
      */
     private final String path;
     /**
-     * The {@link BufferedImage} to be displayed.
+     * The {@link Image} to be displayed.
      */
     private final Image image;
 
     ///////////////////////////// CONSTRUCTORS /////////////////////////////
 
+    /**
+     * Construct enum and {@link Image} to be displayed associated with
+     * <code>path</code>.
+     *
+     * @param path pathname for {@link Image} to be displayed
+     * @pre.cond <code>path</code> is not <code>null</code>
+     * @pre.cond <code>path</code> is a valid pathname for an image file
+     */
     private Images(String path) {
         this.path = path;
         this.image = getImage(path);
@@ -55,28 +72,30 @@ public enum Images {
     //////////////////////////////// METHODS ///////////////////////////////
 
     /**
-     * Return pathname for {@link BufferedImage} to be displayed.
+     * Return pathname for {@link Image} to be displayed.
      *
-     * @return pathname for {@link BufferedImage} to be displayed
+     * @return pathname for {@link Image} to be displayed
      */
     public String path() {
         return path;
     }
 
     /**
-     * Return pathname for {@link BufferedImage} to be displayed.
+     * Return {@link Image} to be displayed.
      *
-     * @return pathname for {@link BufferedImage} to be displayed
+     * @return {@link Image} to be displayed
      */
     public Image image() {
         return image;
     }
 
     /**
-     * Return {@link Image} associated with path.
+     * Return {@link Image} associated with <code>path</code>.
      *
-     * @param path pathname for {@link BufferedImage}
-     * @return {@link Image} associated with path
+     * @param path pathname for {@link Image}
+     * @return {@link Image} associated with <code>path</code>
+     * @pre.cond <code>path</code> is not <code>null</code>
+     * @pre.cond <code>path</code> is a valid pathname for an image file
      */
     public static Image getImage(String path) {
         // log4j Logger cannot be a field of this enum.
